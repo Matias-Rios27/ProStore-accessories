@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Tienda Accesorios</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <div class="log-container">
+            <img src="/assets/img/Video-Game-Controller-Icon-IDV-green.svg.png" alt="">
+            <a class="navbar-brand" href="#">ProStore</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link  mx-lg-2" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Catalogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="#"><i class='bx bx-user' ></i> Iniciar sesion</a>
+                </li>
+              </ul>
+              <div class="carrito">
+                <li class="nav-item">
+                  <a href=""><i class='bx bx-cart bx-tada' ></i></a>
+                  <h4>Carrito</h4>
+                </li>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-start">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-container" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/img/carrousel01.avif" class="d-block w-100 " alt="slider 1">
+              <div class="carousel-caption">
+                <h1>Tu Tienda de confianza</h1>
+                <p>Encuentra tu proximo accesorio gamer!!</p>
+            </div>
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/img/carrousel02.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/img/carrousel03.webp" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div> 
+        <div class="side-content">
+          <div class="container-imagen1">
+            <img src="/assets/img/Imagen-promocion.png" alt="">
+          </div>  
+        </div>
+      </div>   
+
+      <div class="container-destacado">
+        <h1 class="new">Destacado!!</h1>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="">
+          </div>
+          <div class="product-info">
+              <h4>Audifonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+            <button type="button">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="product-image">
+              <img src="./assets/img/articulo02.jpg" alt="">
+          </div>
+          <div class="product-info">
+              <h4>Mouse Gamer Logitech G502 Inalámbrico</h4>
+              <h4>$89.990</h4>
+          </div>
+          <div class="btn">
+            <button type="button">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="">
+          </div>
+          <div class="product-info">
+              <h4>Audifonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+            <button type="button">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="">
+          </div>
+          <div class="product-info">
+              <h4>Audifonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+            <button type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script type="module" src="/assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
