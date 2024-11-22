@@ -35,16 +35,31 @@
                     <a class="nav-link mx-lg-2" href="/views/login.html"><i class='bx bx-user' ></i> Iniciar sesion</a>
                 </li>
               </ul>
-              <div class="carrito">
+              <div style="cursor: pointer;" class="carrito">
                 <li class="nav-item">
-                  <a href=""><i class='bx bx-cart bx-tada' ></i></a>
-                  <h4>Carrito</h4>
+                  <a><i class='bx bx-cart bx-tada' data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras"></i></a>
                 </li>  
               </div>
             </div>
           </div>
         </div>
       </nav>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCompras" aria-labelledby="carritoComprasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="carritoComprasLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul id="carritoItems" class="list-group">
+          </ul>
+          <div class="mt-3">
+            <h5>Total: <span id="totalCarrito">$0</span></h5>
+            <button class="btn btn-success w-100">Finalizar Compra</button>
+          </div>
+        </div>
+      </div> 
+
       <div class="container-start">
         <div id="carouselExampleAutoplaying" class="carousel slide carousel-container" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -84,14 +99,14 @@
       <div class="container">
         <div class="card">
           <div class="product-image">
-              <img src="./assets/img/articulo01.avif" alt="">
+            <img src="./assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="./assets/img/articulo01.avif">
           </div>
           <div class="product-info">
-              <h4>Audifonos Razer</h4>
-              <h4>$12.990</h4>
+            <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+            <h4>$12.990</h4>
           </div>
           <div class="btn">
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="btn-agregar">Agregar al carrito</button>
           </div>
         </div>
         <div class="card">

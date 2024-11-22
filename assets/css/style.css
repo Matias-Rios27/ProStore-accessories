@@ -203,6 +203,7 @@ body{
 
 .container .card .product-image{
     width: 230px;  
+    cursor: pointer;
     margin: 20px auto; 
 }
 
@@ -236,3 +237,19 @@ body{
     font-size: 20px;
     border-radius: 0 0 15px 15px;
 }
+
+.offcanvas {
+    background-color: #f8f9fa;
+  }
+  
+  .offcanvas .offcanvas-title {
+    font-weight: bold;
+  }
+  
+  .list-group-item {
+    font-size: 1rem;
+  }
+  
+  .btn-sm {
+    font-size: 0.8rem;
+  }
