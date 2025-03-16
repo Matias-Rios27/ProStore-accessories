@@ -7,23 +7,24 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="login-container">
+    <div id="loginForm" class="login-container">
         <h1>Iniciar Sesion</h1>
         <form method="post">
             <div class="username">
-                <input type="text" required>
+                <input type="text" id="username" required>
                 <label>Nombre de usuario</label>
             </div>
             <div class="username">
-                <input type="password" required>
+                <input type="password" id="password" required>
                 <label>Contraseña</label>
             </div>
             <div class="recordar">¿Olvido su Contraseña?</div>
             <input type="submit" value="Iniciar">
             <div class="registrarse">
-                Ir a <a href="">registrase</a>
+                Ir a <a href="/index.html">registrase</a>
             </div>
         </form>
     </div>
 </body>
+<script type="module" src="/assets/js/script.js"></script>
 </html>

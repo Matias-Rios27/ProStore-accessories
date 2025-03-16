@@ -1,6 +1,7 @@
 
-body{
+body {
     background: url(/assets/img/background-body.jpg);
+    font-family: 'Arial', sans-serif; 
 }
 
 .login-container{
@@ -32,6 +33,7 @@ form .username{
 }
 
 .username input{
+    color: white;
     width: 100%;
     padding: 0 5px;
     height: 40px;

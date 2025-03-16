@@ -9,7 +9,7 @@
     <title>Tienda Accesorios</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="log-container">
             <img src="/assets/img/Video-Game-Controller-Icon-IDV-green.svg.png" alt="">
@@ -24,7 +24,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <ul class="navbar-nav flex-grow-1 pe-3 ">
                 <li class="nav-item">
                   <a class="nav-link  mx-lg-2" aria-current="page" href="#">Inicio</a>
                 </li>
@@ -34,6 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link mx-lg-2" href="/views/login.html"><i class='bx bx-user' ></i> Iniciar sesion</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#"><i class='bx bx-heart'></i>Favoritos</a>
+              </li>
               </ul>
               <div style="cursor: pointer;" class="carrito">
                 <li class="nav-item">
@@ -43,8 +46,8 @@
             </div>
           </div>
         </div>
-      </nav>
-
+      </nav> 
+      <div id="mensajeCarrito" class="mensaje-carrito">Se ha agregado un producto en el carrito</div>    
       <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCompras" aria-labelledby="carritoComprasLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="carritoComprasLabel">Carrito de Compras</h5>
@@ -64,17 +67,17 @@
         <div id="carouselExampleAutoplaying" class="carousel slide carousel-container" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./assets/img/carrousel01.avif" class="d-block w-100 " alt="slider 1">
+              <img src="./assets/img/carrusel-1.png" class="d-block w-100 " alt="slider 1">
               <div class="carousel-caption">
                 <h1>Tu Tienda de confianza</h1>
                 <p>Encuentra tu proximo accesorio gamer!!</p>
             </div>
             </div>
             <div class="carousel-item">
-              <img src="/assets/img/carrousel02.webp" class="d-block w-100" alt="...">
+              <img src="/assets/img/carrusel-2.webp" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="/assets/img/carrousel03.webp" class="d-block w-100" alt="...">
+              <img src="/assets/img/carrusel-3.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -86,18 +89,49 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div> 
-        <div class="side-content">
-          <div class="container-imagen1">
-            <img src="/assets/img/Imagen-promocion.png" alt="">
-          </div>  
+      </div>
+      <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white">
+                    <img src="./assets/img/cards-1.jpg" class="card-img" alt="PC Gamer Armados">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">PC Gamer Armados</h3>
+                        <p class="card-text">Listos para usar!</p>
+                        <a href="#" class="btn btn-light">Ver Equipos</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="col-md-4">
+                <div class="card text-white">
+                    <img src="./assets/img/cards-2.webp" class="card-img" alt="Tarjetas de Video">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">Tarjetas de Video</h3>
+                        <p class="card-text">Entrega Inmediata!</p>
+                        <a href="#" class="btn btn-light">Ver Tarjetas</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="col-md-4">
+                <div class="card text-white">
+                    <img src="./assets/img/cards-3.jpg" class="card-img" alt="Sillas Gamer">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">Sillas Gamer Profesionales</h3>
+                        <p class="card-text">La mayor comodidad!</p>
+                        <a href="#" class="btn btn-light">Ver Sillas</a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-      </div>   
-
+    </div>
       <div class="container-destacado">
         <h1 class="new">Destacado!!</h1>
       </div>
       <div class="container">
-        <div class="card">
+        <div class="cards">
           <div class="product-image">
             <img src="./assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="./assets/img/articulo01.avif">
           </div>
@@ -106,22 +140,22 @@
             <h4>$12.990</h4>
           </div>
           <div class="btn">
-            <button type="button" class="btn-agregar">Agregar al carrito</button>
+            <button type="button" class="btn-agregar" >Agregar al carrito</button>
           </div>
         </div>
-        <div class="card">
+        <div class="cards">
           <div class="product-image">
-              <img src="./assets/img/articulo02.jpg" alt="">
+              <img src="./assets/img/articulo02.jpg" alt="Mouse Gamer Logitech G502" data-imagen="./assets/img/articulo02.jpg">
           </div>
           <div class="product-info">
-              <h4>Mouse Gamer Logitech G502 Inalámbrico</h4>
+              <h4 data-nombre="Mouse Gamer Logitech G502" data-precio="89990">Mouse Gamer Logitech G502 Inalámbrico</h4>
               <h4>$89.990</h4>
           </div>
           <div class="btn">
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="btn-agregar">Agregar al carrito</button>
           </div>
         </div>
-        <div class="card">
+        <div class="cards">
           <div class="product-image">
               <img src="./assets/img/articulo01.avif" alt="">
           </div>
@@ -130,10 +164,10 @@
               <h4>$12.990</h4>
           </div>
           <div class="btn">
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="btn-agregar">Agregar al carrito</button>
           </div>
         </div>
-        <div class="card">
+        <div class="cards">
           <div class="product-image">
               <img src="./assets/img/articulo01.avif" alt="">
           </div>
@@ -142,12 +176,161 @@
               <h4>$12.990</h4>
           </div>
           <div class="btn">
-            <button type="button">Agregar al carrito</button>
+            <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="">
+          </div>
+          <div class="product-info">
+              <h4>Audifonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+            <button type="button" class="btn-agregar">Agregar al carrito</button>
           </div>
         </div>
       </div>
+      <div class="container-destacado">
+        <h1 class="new">Nuevo en nuestro catalogo!!</h1>
+      </div>
+      <div class="container-carruselcards">
+        <button class="prev">❮</button>
+        <div id="carouselProductos" class="carousel-container">
+            <div class="carousel">
+                <!-- Tarjetas de productos -->
+                <div class="cards">
+                    <div class="product-image">
+                        <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+                    </div>
+                    <div class="product-info">
+                        <h4>Audífonos Razer</h4>
+                        <h4>$12.990</h4>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="btn-agregar">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="cards">
+                  <div class="product-image">
+                      <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+                  </div>
+                  <div class="product-info">
+                      <h4>Audífonos Razer</h4>
+                      <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                      <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+              </div>
+              <div class="cards">
+                <div class="product-image">
+                    <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+                </div>
+                <div class="product-info">
+                    <h4>Audífonos Razer</h4>
+                    <h4>$12.990</h4>
+                </div>
+                <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="cards">
+              <div class="product-image">
+                  <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+              </div>
+              <div class="product-info">
+                  <h4>Audífonos Razer</h4>
+                  <h4>$12.990</h4>
+              </div>
+              <div class="btn">
+                  <button type="button" class="btn-agregar">Agregar al carrito</button>
+              </div>
+          </div>
+          <div class="cards">
+            <div class="product-image">
+                <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+            </div>
+            <div class="product-info">
+                <h4>Audífonos Razer</h4>
+                <h4>$12.990</h4>
+            </div>
+            <div class="btn">
+                <button type="button" class="btn-agregar">Agregar al carrito</button>
+            </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+          </div>
+          <div class="product-info">
+              <h4>Audífonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+              <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+          </div>
+          <div class="product-info">
+              <h4>Audífonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+              <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+          </div>
+          <div class="product-info">
+              <h4>Audífonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+              <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+          </div>
+          <div class="product-info">
+              <h4>Audífonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+              <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="product-image">
+              <img src="./assets/img/articulo01.avif" alt="Audífonos Razer">
+          </div>
+          <div class="product-info">
+              <h4>Audífonos Razer</h4>
+              <h4>$12.990</h4>
+          </div>
+          <div class="btn">
+              <button type="button" class="btn-agregar">Agregar al carrito</button>
+          </div>
+        </div>
+        </div>
+        </div>
+        <button class="next">❯</button>
+      </div>
+        </div>
+      </div>
+      </div>
+
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script type="module" src="/assets/js/script.js"></script>
+    <script src="/assets/js/Carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
