@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit&family=Oswald:wght@200..700&display=swap');
+
+body{
+    background: url(/assets/img/background-body.jpg);
+}
+
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.navbar{
+    position: fixed;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    background-color: rgb(48, 87, 63); 
+    margin-bottom: 45px;         
+}
+
+.navbar .log-container{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .log-container img{
+    width: 50px;
+    height: 50px;
+}
+
+.navbar .navbar-brand{
+    font-size: 30px;
+    margin-left: auto;
+    padding-left: 10px;
+    color: white;
+}
+
+.navbar .nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10%;
+    margin: auto;
+}
+
+.navbar .carrito a{
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: xx-large;
+}
+
+.navbar .carrito h4{
+    font-size: x-large;
+    margin: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.navbar .nav-item .carrito-icon{
+    justify-content: left;
+}
+
+.navbar .carrito-icon{
+    align-items: center;
+    display: flex;
+}
+
+.navbar .carrito-icon box-icon{
+    color: white;
+}
+
+.navbar .navbar-nav{
+    font-size: large;
+}
+
+.navbar .navbar-nav a{
+    color: rgb(255, 255, 255);
+}
+
+.navbar .offcanvas{
+    background-color: rgb(48, 87, 63);
+    color: white;
+}
+
+.navbar .navbar-toggler{
+    background-color: white;
+}
+
+.mensaje-carrito {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .mensaje-carrito.visible {
+    display: block;
+    opacity: 1;
+  }
+
+  body {
+    background-color: #f8f9fa;
+  }
+
+  #container-principal{
+    background-color: white;
+  }
+
+  .filtro-lateral {
+    background-color: white;
+    border-right: 1px solid #ccc;
+    padding: 1rem;
+    height: 100vh;
+  }
+
+  .titulo-filtro {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-button::after {
+    margin-left: auto;
+  }
+
+  .producto-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background: white;
+    text-align: center;
+  }
+
+  .producto-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  .container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .cards{
+    width: 270px;
+    height: 420px; 
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    padding-top: 20px;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid rgb(45, 75, 46);
+    border-radius: 15px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.container .cards .product-image {
+    width: 100%;
+    height: 210px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.container .cards .product-image img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.container .cards .product-image img:hover{
+    transform: scale(1.1);
+}
+
+.container .cards .product-info {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .cards .product-info h4{
+    font-size: clamp(12px, 3vw, 20px);
+    padding: 0 25px;
+}
+
+.container .cards .btn{
+    width: 100%;
+}
+
+.container .cards .btn button{
+    width: 100%;
+    padding: 10px;
+    background:black;
+    border: 1px solid gray;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.container-ayuda{
+  padding-bottom:30px;
+  padding-top: 25px;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.container-ayuda .contactanos{
+  display: flex;
+}
+
+.container-ayuda .contactanos .btn{
+  margin: 5px;
+  background-color: #000000;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.container-ayuda .contactanos .btn:hover{
+  color: green;
+}
+
+.container-ayuda .links{
+  display: flex;
+  gap: 10px;
+  margin-top: 0;
+  margin-left: 200px;
+}
+
+.container-ayuda .links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 35px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.container-ayuda .links a:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+footer {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 20px 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: green;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: white;
+  color: #2b2b2b;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      gap: 10px;
+  }
+}

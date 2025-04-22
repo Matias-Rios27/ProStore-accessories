@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const carrito = [];
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoElement = document.getElementById("carritoCompras");
   const carritoItems = document.getElementById("carritoItems");
   const totalCarrito = document.getElementById("totalCarrito");
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const imagen = productoCard.querySelector("img").getAttribute("src");
     
     carrito.push({ nombre, precio, imagen });
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarCarrito();
     mostrarCarrito();
     mostrarMensajeCarrito();
@@ -34,23 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function actualizarCarrito() {
     carritoItems.innerHTML = "";
     let total = 0;
-
+  
     carrito.forEach((producto, index) => {
       total += producto.precio;
-
+  
       const item = document.createElement("li");
       item.className = "list-group-item d-flex justify-content-between align-items-center";
       item.innerHTML = `
         <div class="d-flex align-items-center">
           <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
-          <span>${producto.nombre} - $${producto.precio.toFixed(0)}</span>
+          <span>${producto.nombre} - $${producto.precio.toLocaleString('es-CL')}</span> <!-- Formato de peso chileno -->
         </div>
         <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">X</button>
       `;
       carritoItems.appendChild(item);
     });
-
-    totalCarrito.textContent = `$${total.toFixed(0)}`;
+  
+    totalCarrito.textContent = `Total: $${total.toLocaleString('es-CL')}`;  // Formato del total
   }
 
   window.eliminarDelCarrito = function (index) {
@@ -81,6 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
       item.classList.toggle('active');
     });
   });
+
+  function toggleOpciones(id) {
+    const opciones = document.getElementById(id);
+    opciones.style.display = opciones.style.display === "block" ? "none" : "block";
+  }
+  
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -119,5 +127,7 @@ document.getElementById('loginForm').addEventListener("submit", function(event) 
     alert("Usuario o contraseña incorrectos");
   }
 })
+
+
 
 

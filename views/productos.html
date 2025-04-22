@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/productos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Todos los productos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="log-container">
+            <img src="/assets/img/Video-Game-Controller-Icon-IDV-green.svg.png" alt="">
+            <a class="navbar-brand" href="#">ProStore</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-grow-1 pe-3 ">
+                <li class="nav-item">
+                  <a class="nav-link  mx-lg-2" aria-current="page" href="/index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="/views/productos.html">Catalogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-lg-2" href="/views/login.html"><i class='bx bx-user' ></i> Iniciar sesion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#"><i class='bx bx-heart'></i>Favoritos</a>
+                </li>
+              </ul>
+              <div style="cursor: pointer;" class="carrito">
+                <li class="nav-item">
+                  <a><i class='bx bx-cart bx-tada' data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras"></i></a>
+                </li>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav> 
+      <div id="mensajeCarrito" class="mensaje-carrito">Se ha agregado un producto en el carrito</div>    
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCompras" aria-labelledby="carritoComprasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="carritoComprasLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul id="carritoItems" class="list-group">
+          </ul>
+          <div class="mt-3">
+            <h5>Total: <span id="totalCarrito">$0</span></h5>
+            <button class="btn btn-success w-100"><a href="/views/carrito.html" style="text-decoration: none; color: aliceblue;">Finalizar Compra</a></button>
+          </div>
+        </div>
+      </div> 
+      <div id="container-principal" class="container-fluid mt-4 mb-5 px-0">
+        <div class="row">
+          <div class="col-md-2 filtro-lateral" style="padding-left: 25px;">
+            <div class="titulo-filtro">Filtrar y ordenar productos</div>
+            <div class="accordion" id="accordionFiltros">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tipoProducto">
+                    Tipo de producto
+                  </button>
+                </h2>
+                <div id="tipoProducto" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input filtro" type="checkbox" value="auriculares" id="checkAuriculares">
+                      <label class="form-check-label" for="checkAuriculares">Auriculares</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filtro" type="checkbox" value="mouses" id="checkMouses">
+                      <label class="form-check-label" for="checkMouses">Mouses</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#precio">
+                    Precio
+                  </button>
+                </h2>
+                <div id="precio" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <input type="range" class="form-range" min="0" max="100000" id="filtroPrecio">
+                    <div id="rangoPrecio">Hasta $100.000</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#disponibles">
+                    Disponibles
+                  </button>
+                </h2>
+                <div id="disponibles" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="disponibleCheck">
+                      <label class="form-check-label" for="disponibleCheck">En stock</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 p-4">
+            <div id="contenedorProductos" class="bg-white p-4 d-flex flex-wrap justify-content-between" style="width: 100%; margin-top: 30px;">
+              <div class="container">
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="cards">
+                  <a href="/views/detalle.html">
+                    <div class="product-image">
+                      <img src="/assets/img/articulo01.avif" alt="Audifonos Razer" data-imagen="/assets/img/articulo01.avif">
+                    </div>
+                  </a>
+                  <div class="product-info">
+                    <h4 data-nombre="Audifonos Razer" data-precio="12990">Audifonos Razer</h4>
+                    <h4>$12.990</h4>
+                  </div>
+                  <div class="btn">
+                    <button type="button" class="btn-agregar">Agregar al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-ayuda">
+        <div class="contactanos">
+          <a href="#" class="btn btn-light">SEGUIMIENTO DE PEDIDO</a>
+          <a href="#" class="btn btn-light">CONTACTANOS</a>
+          <a href="#" class="btn btn-light">CENTRO DE AYUDA</a>
+        </div>
+        <div class="links">
+            <a href=""><i class='bx bxl-facebook-circle'></i></a>
+            <a href=""><i class='bx bxl-instagram' ></i></a>
+            <a href=""><i class='bx bxl-tiktok' ></i></a>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 TuEmpresa. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script type="module" src="/assets/js/script.js"></script>
+    <script type="module" src="/assets/js/carrito.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

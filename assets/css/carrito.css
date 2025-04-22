@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit&family=Oswald:wght@200..700&display=swap');
+
+body{
+    background: url(/assets/img/background-body.jpg);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    position: fixed;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    background-color: rgb(48, 87, 63); 
+    margin-bottom: 45px;         
+}
+
+.navbar .log-container{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .log-container img{
+    width: 50px;
+    height: 50px;
+}
+
+.navbar .navbar-brand{
+    font-size: 30px;
+    margin-left: auto;
+    padding-left: 10px;
+    color: white;
+}
+
+.navbar .nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10%;
+    margin: auto;
+}
+
+.navbar .carrito a{
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: xx-large;
+}
+
+.navbar .carrito h4{
+    font-size: x-large;
+    margin: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.navbar .nav-item .carrito-icon{
+    justify-content: left;
+}
+
+.navbar .carrito-icon{
+    align-items: center;
+    display: flex;
+}
+
+.navbar .carrito-icon box-icon{
+    color: white;
+}
+
+.navbar .navbar-nav{
+    font-size: large;
+}
+
+.navbar .navbar-nav a{
+    color: rgb(255, 255, 255);
+}
+
+.navbar .offcanvas{
+    background-color: rgb(48, 87, 63);
+    color: white;
+}
+
+.navbar .navbar-toggler{
+    background-color: white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carrito-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    gap: 30px;
+  }
+  
+  .carrito-productos, .carrito-resumen {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .carrito-productos {
+    flex: 2;
+    overflow-y: auto;
+  }
+  
+  .carrito-resumen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .resumen-detalle p, .resumen-detalle h4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  
+  #carritoItems li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
