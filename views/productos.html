@@ -9,44 +9,46 @@
     <title>Todos los productos</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <div class="log-container">
-            <img src="/assets/img/Video-Game-Controller-Icon-IDV-green.svg.png" alt="">
-            <a class="navbar-brand" href="#">ProStore</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav flex-grow-1 pe-3 ">
-                <li class="nav-item">
-                  <a class="nav-link  mx-lg-2" aria-current="page" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="/views/productos.html">Catalogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-lg-2" href="/views/login.html"><i class='bx bx-user' ></i> Iniciar sesion</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="#"><i class='bx bx-heart'></i>Favoritos</a>
-                </li>
-              </ul>
-              <div style="cursor: pointer;" class="carrito">
-                <li class="nav-item">
-                  <a><i class='bx bx-cart bx-tada' data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras"></i></a>
-                </li>  
-              </div>
-            </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="log-container">
+        <img src="/assets/img/Video-Game-Controller-Icon-IDV-green.svg.png" alt="">
+        <a class="navbar-brand" href="/index.html">ProStore</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav flex-grow-1 pe-3 ">
+            <li class="nav-item">
+              <a class="nav-link  mx-lg-2" aria-current="page" href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/views/productos.html">Catalogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#"><i class='bx bx-heart'></i>Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/views/login.html" id="userLink">
+                  <i class='bx bx-user'></i> Iniciar sesión
+              </a>
+          </li>
+          </ul>
+          <div style="cursor: pointer;" class="carrito">
+            <li class="nav-item">
+              <a><i class='bx bx-cart bx-tada' data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras"></i></a>
+            </li>  
           </div>
         </div>
-      </nav> 
+      </div>
+    </div>
+  </nav> 
       <div id="mensajeCarrito" class="mensaje-carrito">Se ha agregado un producto en el carrito</div>    
       <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCompras" aria-labelledby="carritoComprasLabel">
         <div class="offcanvas-header">
