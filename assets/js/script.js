@@ -88,8 +88,54 @@ document.addEventListener("DOMContentLoaded", () => {
     const opciones = document.getElementById(id);
     opciones.style.display = opciones.style.display === "block" ? "none" : "block";
   }
-  
+
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const correo = document.getElementById('correo').value;
+    const contraseña = document.getElementById('contraseña').value;
+
+    try {
+        const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ correo, contraseña })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            alert('Login correcto');
+            localStorage.setItem("nombreUsuario", data.usuario.nombre);
+            window.location.href = '/index.html'; 
+        } else {
+            alert(data.mensaje || 'Error al iniciar sesión');
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Error de conexión con el servidor');
+    }
+  });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const userLink = document.getElementById("userLink");
+  const nombreUsuario = localStorage.getItem("nombreUsuario");
+
+  if (nombreUsuario) {
+      userLink.innerHTML = `${nombreUsuario} <span id="logoutButton" class="btn btn-danger btn-sm ms-2">Cerrar sesión</span>`;
+      userLink.setAttribute("href", "/views/perfil.html");
+      const logoutButton = document.getElementById("logoutButton");
+      logoutButton.addEventListener("click", () => {
+          event.preventDefault();
+          localStorage.removeItem("nombreUsuario");  
+          window.location.reload();  
+      });
+  } else {
+      userLink.innerHTML = `<i class='bx bx-user'></i> Iniciar sesión`;
+      userLink.setAttribute("href", "/views/login.html");  
+  }
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const miniaturas = document.querySelectorAll('.miniatura');
@@ -109,24 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-
-document.getElementById('loginForm').addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const usuarioCorrecto = "admin";
-  const passwordCorrecto = "1234";
-
-  const usuarioIngresado = document.getElementById("username").value;
-  const passwordIngresado = document.getElementById("password").value;
-
-  if(usuarioIngresado == usuarioCorrecto && passwordCorrecto == passwordIngresado){
-    alert("Inicio de sesión exitoso")
-    window.location.href = "/index.html";
-  }else{
-    alert("Usuario o contraseña incorrectos");
-  }
-})
 
 
 
