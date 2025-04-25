@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/register.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/register.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Registro</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="toast" class="toast">Registro exitoso</div>
     <div id="registerForm" class="register-form">
-        <h1>Registrarse</h1>
-        <form id="registerForm">
-            <div class="username">
-                <input type="text" name="nombre" id="usuario" required>
-                <label>Nombre de usuario</label>
-            </div>
-            <div class="username">
-                <input type="text" name="correo" id="correo" required>
-                <label>Correo electrónico</label>
-            </div>
-            <div class="username">
-                <input type="password" name="contraseña" id="contraseña" required>
-                <label>Contraseña</label>
-            </div>
-            <div class="username">
-                <input type="password" name="confirmarContraseña" id="confirmarContraseña" required>
-                <label>Repita la contraseña</label>
-            </div>
-            <input type="submit" value="Registrarse">
-            <div class="registrarse">
-                Ir a <a href="/views/login.html">iniciar sesion</a>
-            </div>
-        </form>
+      <h1>Registrarse</h1>
+      <form id="registerForm">
+        <div class="username">
+          <input type="text" name="nombre" id="usuario" required />
+          <label>Nombre de usuario</label>
+        </div>
+        <div class="username">
+          <input type="text" name="correo" id="correo" required />
+          <label>Correo electrónico</label>
+        </div>
+        <p class="error-message" id="errorCorreo"></p>
+        <div class="username password-container">
+          <input type="password" name="contraseña" id="contraseña" required />
+          <label>Contraseña</label>
+          <i class="bx bx-show toggle-password" id="togglePassword"></i>
+        </div>
+        <p class="error-message" id="errorContraseña"></p>
+        <div class="username password-container">
+          <input
+            type="password"
+            name="confirmarContraseña"
+            id="confirmarContraseña"
+            required
+          />
+          <label>Repita la contraseña</label>
+          <i class="bx bx-show toggle-password" id="toggleConfirmPassword"></i>
+        </div>
+        <p class="error-message" id="errorConfirmar"></p>
+        <input type="submit" value="Registrarse" />
+        <div class="registrarse">
+          Ir a <a href="/views/login.html">iniciar sesion</a>
+        </div>
+      </form>
     </div>
     <script type="module" src="/assets/js/register.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-</body>
+  </body>
 </html>
