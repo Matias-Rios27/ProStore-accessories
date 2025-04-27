@@ -115,7 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
 
       if (res.ok) {
-        localStorage.setItem("nombreUsuario", data.usuario.nombre);
+        localStorage.setItem("nombreUsuario", data.usuario.usuario);
+        localStorage.setItem("usuarioCorreo", data.usuario.correo);
         sessionStorage.setItem("loginExitoso", "Inicio de sesión exitoso");
         window.location.href = "/index.html";
       } else {
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutButton.addEventListener("click", () => {
       event.preventDefault();
       localStorage.removeItem("nombreUsuario");
-      window.location.reload();
+      window.location.href = "/index.html";
     });
   } else {
     userLink.innerHTML = `<i class='bx bx-user'></i> Iniciar sesión`;

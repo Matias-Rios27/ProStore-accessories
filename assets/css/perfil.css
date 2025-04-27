@@ -1,96 +1,250 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit&family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Kanit&family=Oswald:wght@200..700&display=swap");
 
-body{
-    background: url(/assets/img/background-body.jpg);
+body {
+  background: url(/assets/img/background-body.jpg);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .anton-regular {
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-.navbar{
-    position: fixed;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    background-color: rgb(48, 87, 63); 
-    margin-bottom: 45px;         
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.navbar .log-container{
-    margin-left: 10px;
+.navbar {
+  position: fixed;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  background-color: rgb(48, 87, 63);
+  margin-bottom: 45px;
+}
+
+.navbar .log-container {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .log-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+  margin-left: auto;
+  padding-left: 10px;
+  color: white;
+}
+
+.navbar .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 10%;
+  margin: auto;
+}
+
+.navbar .carrito a {
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
+}
+
+.navbar .carrito h4 {
+  font-size: x-large;
+  margin: auto;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navbar .nav-item .carrito-icon {
+  justify-content: left;
+}
+
+.navbar .carrito-icon {
+  align-items: center;
+  display: flex;
+}
+
+.navbar .carrito-icon box-icon {
+  color: white;
+}
+
+.navbar .navbar-nav {
+  font-size: large;
+}
+
+.navbar .navbar-nav a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar .offcanvas {
+  background-color: rgb(48, 87, 63);
+  color: white;
+}
+
+.navbar .navbar-toggler {
+  background-color: white;
+}
+
+.mensaje-carrito {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(48, 87, 63);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mensaje-carrito.visible {
+  display: block;
+  opacity: 1;
+}
+
+.container-perfil {
     display: flex;
-    align-items: center;
-}
-
-.navbar .log-container img{
-    width: 50px;
-    height: 50px;
-}
-
-.navbar .navbar-brand{
-    font-size: 30px;
-    margin-left: auto;
-    padding-left: 10px;
-    color: white;
-}
-
-.navbar .nav-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar .carrito{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 10%;
-    margin: auto;
-}
-
-.navbar .carrito a{
-    color: white;
-    width: 100%;
-    height: 100%;
-    font-size: xx-large;
-}
-
-.navbar .carrito h4{
-    font-size: x-large;
-    margin: auto;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.navbar .nav-item .carrito-icon{
-    justify-content: left;
-}
-
-.navbar .carrito-icon{
-    align-items: center;
-    display: flex;
-}
-
-.navbar .carrito-icon box-icon{
-    color: white;
-}
-
-.navbar .navbar-nav{
-    font-size: large;
-}
-
-.navbar .navbar-nav a{
-    color: rgb(255, 255, 255);
-}
-
-.navbar .offcanvas{
+    padding: 40px;
+    gap: 20px;
     background-color: rgb(48, 87, 63);
-    color: white;
+    border-radius: 0; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 100%;
+    min-height: calc(100vh - 100px); 
+    margin: 0; 
 }
-
-.navbar .navbar-toggler{
+  
+  .perfil-izquierda {
+    flex: 1;
     background-color: white;
-}
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  
+  }
+  
+  .avatar-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .avatar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .avatar button {
+    margin-top: 10px;
+    background-color: #0c5a3c;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .perfil-izquierda .info label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 60px 5px;
+    text-align: left;
+  }
+  
+  .perfil-izquierda .info input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #ccc;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  
+  .perfil-derecha {
+    flex: 2;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between; 
+  }
+  
+  .perfil-derecha h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .grupo {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grupo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .grupo input {
+    padding: 8px;
+    background-color: #ccc;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  
+  .botones {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  
+  .btn-editar, .btn-guardar {
+    padding: 10px 20px;
+    background-color: #0c5a3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn-guardar {
+    background-color: #0c5a3c;
+  }
+  

@@ -64,7 +64,56 @@
           </div>
         </div>
       </div> 
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<div class="container-perfil">
+  <div class="perfil-izquierda">
+    <div class="avatar">
+      <div class="avatar-image">
+        <img id="avatarImg" src="/assets/img/default-avatar.png" alt="Avatar" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+      </div>
+      <div class="avatar-button">
+        <input type="file" id="avatarInput" style="display: none;" accept="image/*" onchange="previewImage(event)">
+        <button onclick="document.getElementById('avatarInput').click();" class="btn btn-primary">Cambiar Imagen</button>
+      </div>
+    </div>
+    <div class="info">
+      <label>Nombre</label>
+      <input type="text" id="nombre" placeholder="Llenar este campo">
+      <label>Apellido</label>
+      <input type="text" id="apellido" placeholder="LLenar este campo">
+      <label>Correo</label>
+      <input type="email" id="correo" placeholder="Llenar este campo">
+    </div>
+  </div>
+  <div class="perfil-derecha">
+    <h2>Editar Perfil</h2>
+    <div class="formulario">
+      <div class="grupo">
+        <label>Telefono</label>
+        <input type="text" id="telefono" placeholder="LLenar este campo">
+      </div>
+      <div class="grupo">
+        <label>Dirección</label>
+        <input type="text" id="direccion" placeholder="LLenar este campo">
+      </div>
+      <div class="grupo">
+        <label>País</label>
+        <input type="text" id="pais" placeholder="LLenar este campo">
+      </div>
+      <div class="grupo">
+        <label>Ciudad</label>
+        <input type="text" id="ciudad" placeholder="LLenar este campo">
+      </div>
+    </div>
+    <div class="botones">
+      <button class="btn-editar">Cambiar Contraseña</button>
+      <button class="btn-editar">Cambiar Método de Pago</button>
+      <button id="guardarCambiosBtn" class="btn-guardar">Guardar Cambios</button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/perfil.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

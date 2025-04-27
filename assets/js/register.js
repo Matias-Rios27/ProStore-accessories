@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const nombre = document.getElementById("usuario").value;
+      const usuario = document.getElementById("usuario").value;
       const correo = document.getElementById("correo").value;
       const contraseña = document.getElementById("contraseña").value;
       const confirmar = document.getElementById("confirmarContraseña").value;
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ nombre, correo, contraseña }),
+          body: JSON.stringify({ usuario, correo, contraseña }),
         });
 
         const data = await res.json();
