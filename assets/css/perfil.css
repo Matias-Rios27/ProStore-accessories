@@ -8,6 +8,27 @@ body {
   box-sizing: border-box;
 }
 
+.toast {
+  position: fixed;
+  top: -100px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0; 
+  z-index: 9999;
+}
+
+.toast.show {
+  top: 20px;
+  opacity: 1;
+}
+
 .anton-regular {
   font-family: "Anton", sans-serif;
   font-weight: 400;
